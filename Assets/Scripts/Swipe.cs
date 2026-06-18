@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Swipe : MonoBehaviour
 {
+    public bool grounded;
+    public int jumpForce;
+    public int downForce;
+
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
 
@@ -50,12 +54,30 @@ public class Swipe : MonoBehaviour
     void OnSwipeUp()
     {
         Debug.Log("Swiped Up!");
-        // Add your jump or upward movement logic here
+
+        if (grounded)
+        {
+            GetComponent<Rigidbody>().AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        }
     }
 
     void OnSwipeDown()
     {
         Debug.Log("Swiped Down!");
-        // Add your crouch or downward movement logic here
+
+        if (!grounded)
+        {
+            GetComponent<Rigidbody>().AddForce(transform.up * downForce, ForceMode.Impulse);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        grounded = true;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        grounded = false;
     }
 }

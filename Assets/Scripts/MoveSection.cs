@@ -1,9 +1,11 @@
+using System;
 using UnityEngine;
 
 public class MoveSection : MonoBehaviour
 {
-    public Vector3 movingCoordinate;
-    public Vector3 destroyGameobject;
+
+
+    public float speed;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,11 +16,11 @@ public class MoveSection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += movingCoordinate * Time.deltaTime;
+        transform.position += new Vector3 (speed * Time.deltaTime, transform.position.y, transform.position.z);
 
-        if(this.gameObject.transform.position.x <= destroyGameobject.x)
+        if (transform.position.x < -10f) 
         {
-            Destroy(this.gameObject);
+            transform.position = new Vector3(20, transform.position.y, transform.position.z);
         }
     }
 }
