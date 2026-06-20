@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Swipe : MonoBehaviour
 {
+    public GameManager gameManager;
+
     public bool grounded;
     public int jumpForce;
     public int downForce;
@@ -13,19 +15,27 @@ public class Swipe : MonoBehaviour
     [Tooltip("Minimum pixel distance to register as a swipe")]
     public float swipeThreshold = 50f;
 
+    private void Start()
+    {
+        gameManager = GetComponent<GameManager>();
+    }
+
     void Update()
     {
-        // 1. Detect Initial Press (Touch or Mouse)
-        if (Input.GetMouseButtonDown(0))
+        if(gameManager.CurrentState == GameManager.playerState.Play)
         {
-            startTouchPosition = Input.mousePosition;
-        }
+            // 1. Detect Initial Press (Touch or Mouse)
+            if (Input.GetMouseButtonDown(0))
+            {
+                startTouchPosition = Input.mousePosition;
+            }
 
-        // 2. Detect Release and Process Swipe Direction
-        if (Input.GetMouseButtonUp(0))
-        {
-            endTouchPosition = Input.mousePosition;
-            DetectSwipe();
+            // 2. Detect Release and Process Swipe Direction
+            if (Input.GetMouseButtonUp(0))
+            {
+                endTouchPosition = Input.mousePosition;
+                DetectSwipe();
+            }
         }
     }
 
