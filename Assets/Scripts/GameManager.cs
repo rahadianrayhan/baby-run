@@ -16,10 +16,14 @@ public class GameManager : MonoBehaviour
 
     [Header("Health Bar")]
     public int health;
+    public TMP_Text healthText;
 
     [Header("Audio")]
     public AudioClip[] audioClip;
     public AudioSource[] audioSource;
+
+    [Header("ParalaxSpeed")]
+    public float parallaxSpeed = 0.5f;
 
     private void Awake()
     {
@@ -44,6 +48,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        healthText.text = health.ToString();
     }
 }

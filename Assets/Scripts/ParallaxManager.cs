@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ParallaxManager : MonoBehaviour
 {
-    [SerializeField] private float parallaxSpeed = 0.5f;
+    GameManager gameManager;    
 
     [SerializeField] private GameObject[] parallaxLayers;
 
@@ -13,6 +13,8 @@ public class ParallaxManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = FindAnyObjectByType<GameManager>();
+
         endPos = parallaxLayers[0].transform.localPosition;
         startPos = parallaxLayers[parallaxLayers.Length - 1].transform.localPosition;
     }
@@ -22,7 +24,7 @@ public class ParallaxManager : MonoBehaviour
     {
         foreach (GameObject layer in parallaxLayers)
         {
-            layer.transform.Translate(Vector3.left * parallaxSpeed * Time.deltaTime);
+            layer.transform.Translate(Vector3.left * gameManager.parallaxSpeed * Time.deltaTime);
 
             if (layer.transform.localPosition.x <= endPos.x)
             {

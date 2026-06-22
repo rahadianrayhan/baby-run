@@ -8,6 +8,8 @@ public class Swipe : MonoBehaviour
     public int jumpForce;
     public int downForce;
 
+    private float deadCam = -3;
+
     private Vector2 startTouchPosition;
     private Vector2 endTouchPosition;
 
@@ -17,12 +19,12 @@ public class Swipe : MonoBehaviour
 
     private void Start()
     {
-        gameManager = GetComponent<GameManager>();
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     void Update()
     {
-        if(gameManager.CurrentState == GameManager.playerState.Play)
+        if (gameManager.CurrentState == GameManager.playerState.Play)
         {
             // 1. Detect Initial Press (Touch or Mouse)
             if (Input.GetMouseButtonDown(0))
@@ -35,6 +37,21 @@ public class Swipe : MonoBehaviour
             {
                 endTouchPosition = Input.mousePosition;
                 DetectSwipe();
+            }
+        }
+
+        if (transform.position.x < deadCam || transform.position.y <= 0)
+        {
+            gameObject.transform.position = new Vector3(0, 3, transform.position.z);
+            gameManager.health -= 1;
+
+            if (gameManager.health > 1)
+            {
+                Debug.Log("Game Over");
+            }
+            else
+            {
+                gameManager.CurrentState = GameManager.playerState.Die;
             }
         }
     }
@@ -61,7 +78,7 @@ public class Swipe : MonoBehaviour
         }
     }
 
-    void OnSwipeUp()
+    public void OnSwipeUp()
     {
         Debug.Log("Swiped Up!");
 
@@ -71,7 +88,7 @@ public class Swipe : MonoBehaviour
         }
     }
 
-    void OnSwipeDown()
+    public void OnSwipeDown()
     {
         Debug.Log("Swiped Down!");
 

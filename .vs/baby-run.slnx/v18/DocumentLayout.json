@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\#Work\\My Project\\baby-run\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|d:\\#work\\my project\\baby-run\\assets\\scripts\\parallaxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\parallaxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|d:\\#work\\my project\\baby-run\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -13,10 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|d:\\#work\\my project\\baby-run\\assets\\scripts\\buildingrandomizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\buildingrandomizer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|d:\\#work\\my project\\baby-run\\assets\\scripts\\parallaxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\parallaxmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B4CD19DA-EE08-5225-FB19-1D0DFA4113DD}|Assembly-CSharp.csproj|d:\\#work\\my project\\baby-run\\assets\\scripts\\movesection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,11 +34,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 194,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "BuildingRandomizer.cs",
               "DocumentMoniker": "D:\\#Work\\My Project\\baby-run\\Assets\\Scripts\\BuildingRandomizer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\BuildingRandomizer.cs",
@@ -50,15 +50,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "ParallaxManager.cs",
               "DocumentMoniker": "D:\\#Work\\My Project\\baby-run\\Assets\\Scripts\\ParallaxManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ParallaxManager.cs",
               "ToolTip": "D:\\#Work\\My Project\\baby-run\\Assets\\Scripts\\ParallaxManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\ParallaxManager.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwB0AAABKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T15:01:49.603Z"
+              "WhenOpened": "2026-06-18T15:01:49.603Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -86,15 +87,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Swipe.cs",
               "DocumentMoniker": "D:\\#Work\\My Project\\baby-run\\Assets\\Scripts\\Swipe.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Swipe.cs",
               "ToolTip": "D:\\#Work\\My Project\\baby-run\\Assets\\Scripts\\Swipe.cs",
               "RelativeToolTip": "Assets\\Scripts\\Swipe.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAA5AAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T13:48:53.443Z",
+              "WhenOpened": "2026-06-20T12:43:41.569Z",
               "EditorCaption": ""
             }
           ]
@@ -105,13 +106,13 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "GameManager.cs",
               "DocumentMoniker": "D:\\#Work\\My Project\\baby-run\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "D:\\#Work\\My Project\\baby-run\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAbAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-19T14:15:05.055Z",
               "EditorCaption": ""
