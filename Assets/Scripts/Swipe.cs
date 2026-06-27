@@ -8,6 +8,8 @@ public class Swipe : MonoBehaviour
     public int jumpForce;
     public int downForce;
 
+    Animator animator;
+
     private float deadCam = -3;
 
     private Vector2 startTouchPosition;
@@ -19,39 +21,47 @@ public class Swipe : MonoBehaviour
 
     private void Start()
     {
-        gameManager = FindObjectOfType<GameManager>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (gameManager.CurrentState == GameManager.playerState.Play)
+        if(gameManager == null)
         {
-            // 1. Detect Initial Press (Touch or Mouse)
-            if (Input.GetMouseButtonDown(0))
-            {
-                startTouchPosition = Input.mousePosition;
-            }
-
-            // 2. Detect Release and Process Swipe Direction
-            if (Input.GetMouseButtonUp(0))
-            {
-                endTouchPosition = Input.mousePosition;
-                DetectSwipe();
-            }
+            gameManager = FindAnyObjectByType<GameManager>();
         }
-
-        if (transform.position.x < deadCam || transform.position.y <= 0)
+        else 
         {
-            gameObject.transform.position = new Vector3(0, 3, transform.position.z);
-            gameManager.health -= 1;
+            if (gameManager.CurrentState == GameManager.playerState.Play)
+            {
+                // 1. Detect Initial Press (Touch or Mouse)
+                if (Input.GetMouseButtonDown(0))
+                {
+                    startTouchPosition = Input.mousePosition;
+                }
 
-            if (gameManager.health > 1)
-            {
-                Debug.Log("Game Over");
+                // 2. Detect Release and Process Swipe Direction
+                if (Input.GetMouseButtonUp(0))
+                {
+                    endTouchPosition = Input.mousePosition;
+                    DetectSwipe();
+                }
             }
-            else
+
+            if (transform.position.x < deadCam || transform.position.y <= 0)
             {
-                gameManager.CurrentState = GameManager.playerState.Die;
+                gameObject.transform.position = new Vector3(0, 3, transform.position.z);
+                gameManager.health -= 1;
+
+                if (gameManager.health > 0)
+                {
+                    
+                }
+                else
+                {
+                    gameManager.CurrentState = GameManager.playerState.Die;
+                    gameManager.GameOver();
+                }
             }
         }
     }
@@ -85,6 +95,8 @@ public class Swipe : MonoBehaviour
         if (grounded)
         {
             GetComponent<Rigidbody>().AddForce(transform.up * jumpForce, ForceMode.Impulse);
+            gameManager.AnimChar.SetTrigger("Jump");
+            animator.SetTrigger("PlayerJump");
         }
     }
 
@@ -101,6 +113,7 @@ public class Swipe : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         grounded = true;
+        animator.SetTrigger("PlayerOnFloor"); 
     }
 
     private void OnCollisionExit(Collision collision)

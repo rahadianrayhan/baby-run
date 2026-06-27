@@ -122,6 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2338247851019566491}
   - component: {fileID: 7864093479588012527}
+  - component: {fileID: 1033815868954019117}
   m_Layer: 0
   m_Name: bld-chunk-1
   m_TagString: Untagged
@@ -154,11 +155,27 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1705408267336593641}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7762ddf1de1256842b57e3b80f4f79d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BuildingRandomizer
+  building:
+  - {fileID: 5017068393107080045}
+  - {fileID: 320518641897735347}
+  - {fileID: 1593816613135874229}
+--- !u!114 &1033815868954019117
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705408267336593641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f051af22f4676c4e8c0e849bc46ac1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BuildingStructural
   building:
   - {fileID: 5017068393107080045}
   - {fileID: 320518641897735347}

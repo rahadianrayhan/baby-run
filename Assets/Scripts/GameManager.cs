@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -25,6 +26,12 @@ public class GameManager : MonoBehaviour
     [Header("ParalaxSpeed")]
     public float parallaxSpeed = 0.5f;
 
+    [Header("UI Char")]
+    public Animator AnimChar;
+
+    [Header("UI GameOver")]
+    public GameObject UIGameOver;
+
     private void Awake()
     {
         if (instance == null)
@@ -37,6 +44,21 @@ public class GameManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(gameObject);
+    }
+
+    public void GameOver()
+    {
+        UIGameOver.gameObject.SetActive(true);
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

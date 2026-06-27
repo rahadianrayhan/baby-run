@@ -55,6 +55,7 @@
     <Compile Include="Assets\Scripts\BuildingRandomizer.cs" />
     <Compile Include="Assets\Scripts\ParallaxManager.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
+    <Compile Include="Assets\Scripts\BuildingStructural.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
