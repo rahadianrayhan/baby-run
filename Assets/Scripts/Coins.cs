@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class Coins : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Player")
+        if (other.CompareTag("Player"))
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

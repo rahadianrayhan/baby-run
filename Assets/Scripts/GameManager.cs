@@ -27,9 +27,6 @@ public class GameManager : MonoBehaviour
     public AudioClip[] audioClip;
     public AudioSource[] audioSource;
 
-    [Header("ParalaxSpeed")]
-    public float parallaxSpeed = 0.5f;
-
     [Header("UI Char")]
     public Animator AnimChar;
 

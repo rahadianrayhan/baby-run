@@ -13,7 +13,6 @@ public class ParallaxManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         endPos = parallaxLayers[0].transform.localPosition;
         startPos = parallaxLayers[parallaxLayers.Length - 1].transform.localPosition;
     }

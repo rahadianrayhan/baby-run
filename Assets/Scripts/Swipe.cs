@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Swipe : MonoBehaviour
 {
     public GameManager gameManager;
+
+    //public Image image;
 
     public bool grounded;
     public int jumpForce;
@@ -22,6 +25,7 @@ public class Swipe : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        //image = GetComponent<Image>();
     }
 
     void Update()
@@ -88,7 +92,7 @@ public class Swipe : MonoBehaviour
         }
     }
 
-    public void OnSwipeUp()
+    public void Jump()
     {
         Debug.Log("Swiped Up!");
 
@@ -100,14 +104,27 @@ public class Swipe : MonoBehaviour
         }
     }
 
+    public void OnSwipeUp()
+    {
+        
+        //Debug.Log("Swiped Up!");
+
+        //if (grounded)
+        //{
+        //    GetComponent<Rigidbody>().AddForce(transform.up * jumpForce, ForceMode.Impulse);
+        //    gameManager.AnimChar.SetTrigger("Jump");
+        //    animator.SetTrigger("PlayerJump");
+        //}
+    }
+
     public void OnSwipeDown()
     {
-        Debug.Log("Swiped Down!");
+        //Debug.Log("Swiped Down!");
 
-        if (!grounded)
-        {
-            GetComponent<Rigidbody>().AddForce(transform.up * downForce, ForceMode.Impulse);
-        }
+        //if (!grounded)
+        //{
+        //    GetComponent<Rigidbody>().AddForce(transform.up * downForce, ForceMode.Impulse);
+        //}
     }
 
     private void OnCollisionEnter(Collision collision)
