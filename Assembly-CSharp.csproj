@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\MoveSection.cs" />
     <Compile Include="Assets\Scripts\Swipe.cs" />
+    <Compile Include="Assets\Scripts\Coins.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\BuildingRandomizer.cs" />
     <Compile Include="Assets\Scripts\ParallaxManager.cs" />

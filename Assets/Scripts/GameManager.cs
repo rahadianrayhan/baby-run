@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
     public int health;
     public TMP_Text healthText;
 
+    [Header("Coin")]
+    public int coin;
+    public TMP_Text coinText;
+
     [Header("Audio")]
     public AudioClip[] audioClip;
     public AudioSource[] audioSource;
@@ -71,5 +75,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         healthText.text = health.ToString();
+        coinText.text = coin.ToString();
     }
 }

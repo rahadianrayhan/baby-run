@@ -113,7 +113,12 @@ public class Swipe : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         grounded = true;
-        animator.SetTrigger("PlayerOnFloor"); 
+        animator.SetTrigger("PlayerOnFloor");
+
+        if (collision.gameObject.tag == "Coin") 
+        {
+            gameManager.coin += 1;
+        }
     }
 
     private void OnCollisionExit(Collision collision)
